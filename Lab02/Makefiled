@@ -3,7 +3,7 @@
 # This makefile is intended for use with GNU make
 # This example is intended to be built with Linaro bare-metal GCC
 
-#adjusted to correctly compile c
+#adjusted to correctly compile d
 
 TARGET=Lab02
 CC=gcc
@@ -21,9 +21,9 @@ main.o: main.c
 # Compile for best debug view (lowest optimization)
 	$(CC) $(FLAGS) -c $^  -o $@
 
-lab02c.o: lab02c.S
+lab02d.o: lab02d.S
 # Compile for best debug view (lowest optimization)
 	$(CC) $(FLAGS) -c $^ -o $@
 
-$(TARGET): main.o lab02c.o
-	$(LD) main.o lab02c.o -o $@
+$(TARGET): main.o lab02d.o
+	$(LD) main.o lab02d.o -o $@

@@ -2,13 +2,10 @@
 
 #include <stdio.h>
 
-extern long long* lab03c();//ours is configured to return my_array address 
+extern long long int lab03b();//function for UIN loop
 int main(void)
 {
-    long long* my_array = lab03c();//returns address of beginning of array
-    printf("Result of lab03c = %p\n", (void*)my_array);
-    for(int i=0;i<10;i++){
-	printf("my_array[%d]=  %lld\n",i,*(my_array+i));//print value at my_array[i]
-    }
+    long long int a = lab03b();
+    printf("Result of lab03b() = %lld\n", a);
     return 0;
 }

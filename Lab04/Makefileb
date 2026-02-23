@@ -19,9 +19,13 @@ main.o: main.c
 # Compile for best debug view (lowest optimization)
 	$(CC) $(FLAGS) -c $^  -o $@
 
+my_mul.o: my_mul.S
+# Compile for best debug view (lowest optimization)
+	$(CC) $(FLAGS) -c $^ -o $@
+
 lab04b.o: lab04b.S
 # Compile for best debug view (lowest optimization)
 	$(CC) $(FLAGS) -c $^ -o $@
 
-$(TARGET): main.o lab04b.o
-	$(LD) main.o lab04b.o -o $@
+$(TARGET): main.o lab04b.o my_mul.o
+	$(LD) main.o lab04b.o my_mul.o -o $@
